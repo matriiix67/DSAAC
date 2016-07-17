@@ -1,3 +1,8 @@
+#ifndef _ARRAY_LIST_H
+#define _ARRAY_LIST_H
+
+#include "linerList.h"
+
 template<classs T>
 class arrayList : public linearList<T>
 {
@@ -15,13 +20,15 @@ public:
   void output(ostream& out) const;
 
   int capacity() const { return arrayLength; }
-  
+
 protected:
   void checkIndex(int theIndex) const;
   T* element;
   int arrayLength;
   int listSize;
 };
+
+#endif
 
 template<class T>
 arrayList<T>::arrayList(int initialCapacity)
@@ -75,5 +82,3 @@ int arrayList<T>::indexOf(const T& theElement) const
   else
     return theIndex;
 }
-
-
